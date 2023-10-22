@@ -152,3 +152,9 @@ header .navbar li a:hover{
     align-items: center;
     padding-left: 30px;
 }
+
+.footer{
+    background-color: #3DADF2;
+    list-style: none;
+}
+
