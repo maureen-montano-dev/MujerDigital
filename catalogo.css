@@ -1,3 +1,5 @@
+/* Parámetros generales */
+
 body{
     font-family: 'Poppins', sans-serif;
     font-family: 'Quicksand', sans-serif;
@@ -80,14 +82,16 @@ header .navbar li a:hover{
     background-color: #fff;
 }
 
+/* Catálogos de los productos */
+
 .product-card {
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            padding: 15px;
-            background-color: #fff;
-            width: 100%;
-        }
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    background-color: #fff;
+    width: 100%;
+}
 
 .product-info {
     height: 100%;
@@ -106,22 +110,6 @@ header .navbar li a:hover{
 .carrito-navbar {
     position: relative;
     cursor: pointer;
-}
-
-#i-carrito {
-    font-size: 24px;
-    margin-right: 5px;
-}
-
-#carrito-contador {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 50%;
-    padding: 5px 10px;
-    font-size: 14px;
 }
 
 .product-card {
@@ -146,7 +134,20 @@ header .navbar li a:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.btn-solid {
+    background-color: #dc3545;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.btn-solid:hover {
+    background-color: #c82333;
+}
+
+/* Footer */
 .footer{
     background-color: #3DADF2;
     list-style: none;

@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const continuarCompra = document.getElementById('continuar-compra');
 
     continuarCompra.addEventListener('click', function () {
-        // Redirige a la página de pago o formulario (ajusta la URL según tu necesidad).
         window.location.href = '/formulario.html';
     });
 
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <td>${nombre}</td>
             <td>${precio}</td>
             <td><input type="number" value="1" min="1"></td>
-            <td><button class="eliminar-producto btn btn-danger">Eliminar</button></td>
+            <td><button class="eliminar-producto btn btn-danger btn-solid">Eliminar</button></td>
         `;
 
         const eliminarBtn = row.querySelector('.eliminar-producto');

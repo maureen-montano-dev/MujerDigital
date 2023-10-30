@@ -1,3 +1,5 @@
+//Funcionalidad del carrusel
+
 var mySwiper = new Swiper('.mySwiper', {
       navigation: {
         nextEl: '.swiper-button-next',
