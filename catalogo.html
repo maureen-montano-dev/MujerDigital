@@ -28,7 +28,7 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                        <li class="nav-item btn btn-outline-dark me-2" type="button"><i class="fas fa-shopping-cart"></i></li>
+                    <li class="nav-item btn btn-outline-dark me-2" type="button"><i class="fas fa-shopping-cart" id="i-carrito"></i>
                     <li  class="nav-item"><a class="nav-link" href="/Home.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/Home.html">Quiénes somos</a></li>
                     <li class="nav-item"><a class="nav-link" href="/Home.html">Cómo hacer tu compra</a></li>
@@ -49,21 +49,60 @@
     </header>
 </section>
 
-<div class="container-fluid">
+<header class="container-fluid py-2 navbar-fixed">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/logo.jpg" alt="" width="30" height="24" class="d-inline-block align-text-top"> De Compras Store
+            </a>
+            <!-- Carrito de compras en el navbar -->
+            <div class="carrito-navbar">
+                <i class="fas fa-shopping-cart" id="i-carrito"></i>
+                <span id="carrito-contador">0</span>
+            </div>
+            <!-- Otros elementos del navbar... -->
+        </nav>
+    </header>
+
+    <!-- Carrito de compras -->
+<div class="container" id="carrito-section">
+    <h2 class="text-center pt-5">Carrito de Compras</h2>
+    <table id="carrito-items" class="table">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="text-center">
+        <button class="btn btn-primary mt-3" id="continuar-compra">Continuar Compra</button>
+    </div>
+</div>
+
+
+
+<!-- Catálogo de productos -->
+<div class="container-fluid" id="lista-cursos">
     <h2 class="text-center pb-5" id="saludBelleza">Salud y Belleza</h2>
-    <div class="row">
+    <div class="row" id="lista-productos">
         <div class="col-md-4">
-            <div class="product-card">
-                <img src="/assets/brocha.jpg" alt="Producto 1" class="img-fluid">
-                <div class="card-body pt-2">
-                    <h3 class="card-title">Brochas</h3>
-                    <p class="card-text">$19.99</p>
-                    <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                        <button class="btn button-carrito">Agregar al Carrito</button>
-                    </div>
-                </div>
+    <div class="product-card">
+        <img src="/assets/brocha.jpg" alt="Brochas" class="img-fluid">
+        <div class="card-body pt-2">
+            <h3 class="card-title">Brochas</h3>
+            <p class="card-text">$19.99</p>
+            <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
+                <button class="btn button-carrito" data-nombre="Brochas" data-precio="19.99" data-imagen="/assets/brocha.jpg">Agregar al Carrito</button>
             </div>
         </div>
+    </div>
+</div>
+
+
+
         <div class="col-md-4">
             <div class="product-card pt-4">
                 <img src="/assets/espejo.jpg" alt="Producto 2" class="img-fluid">
@@ -71,7 +110,7 @@
                     <h3 class="card-title">Espejo</h3>
                     <p class="card-text">$24.99</p>
                     <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                        <button class="btn button-carrito">Agregar al Carrito</button>
+                        <button class="btn button-carrito" data-nombre="Espejo" data-precio="24.99" data-imagen="/assets/espejo.jpg">Agregar al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -82,20 +121,20 @@
                 <h3>Lipstick</h3>
                 <p class="product-price">$29.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Lipstick" data-precio="29.99" data-imagen="/assets/labial.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row" id="lista-productos">
         <div class="col-md-4">
             <div class="product-card">
                 <img src="/assets/maquillaje.jpg" alt="Producto 4" class="img-fluid">
                 <h3>Sombras</h3>
                 <p class="product-price">$15.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Sombras" data-precio="15.99" data-imagen="/assets/maquillaje.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -105,17 +144,17 @@
                 <h3>Polvo</h3>
                 <p class="product-price">$34.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Polvo" data-precio="34.99" data-imagen="/assets/polvo.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="product-card">
                 <img src="/assets/sombra.jpg" alt="Producto 6" class="img-fluid">
-                <h3>Sombra de ojos</h3>
+                <h3>Set de sombras</h3>
                 <p class="product-price">$22.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Set de sombras" data-precio="22.99" data-imagen="/assets/sombra.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -130,7 +169,7 @@
                     <h3 class="card-title">Cámara</h3>
                     <p class="card-text">$19.99</p>
                     <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                        <button class="btn button-carrito">Agregar al Carrito</button>
+                        <button class="btn button-carrito" data-nombre="Cámara" data-precio="19.99" data-imagen="/assets/camara.jpg">Agregar al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -142,7 +181,7 @@
                     <h3 class="card-title">Tocadisco</h3>
                     <p class="card-text">$24.99</p>
                     <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                        <button class="btn button-carrito">Agregar al Carrito</button>
+                        <button class="btn button-carrito" data-nombre="Tocadisco" data-precio="24.99" data-imagen="/assets/disco.jpg">Agregar al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -153,7 +192,7 @@
                 <h3>Laptop</h3>
                 <p class="product-price">$29.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Laptop" data-precio="29.99" data-imagen="/assets/laptop.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -166,7 +205,7 @@
                 <h3>Micrófono</h3>
                 <p class="product-price">$15.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Micrófono" data-precio="15.99" data-imagen="/assets/microfono.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -176,7 +215,7 @@
                 <h3>Iphone</h3>
                 <p class="product-price">$34.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Iphone" data-precio="34.99" data-imagen="/assets/movil.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -186,7 +225,7 @@
                 <h3>Telescopio</h3>
                 <p class="product-price">$22.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Telescopio" data-precio="22.99" data-imagen="/assets/telescopio.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -201,7 +240,7 @@
                     <h3 class="card-title">Chimenea</h3>
                     <p class="card-text">$19.99</p>
                     <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                        <button class="btn button-carrito">Agregar al Carrito</button>
+                        <button class="btn button-carrito" data-nombre="Chimenea" data-precio="19.99" data-imagen="/assets/chimenea.jpg">Agregar al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -213,7 +252,7 @@
                     <h3 class="card-title">Cocina</h3>
                     <p class="card-text">$24.99</p>
                     <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                        <button class="btn button-carrito">Agregar al Carrito</button>
+                        <button class="btn button-carrito" data-nombre="Cocina" data-precio="24.99" data-imagen="/assets/cocina.jpg">Agregar al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -224,7 +263,7 @@
                 <h3>Comedor</h3>
                 <p class="product-price">$29.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Comedor" data-precio="29.99" data-imagen="/assets/comedor.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -237,7 +276,7 @@
                 <h3>Estante</h3>
                 <p class="product-price">$15.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Estante" data-precio="15.99" data-imagen="/assets/estante.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -247,7 +286,7 @@
                 <h3>Muebles</h3>
                 <p class="product-price">$34.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Muebles" data-precio="34.99" data-imagen="/assets/mueble.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -257,7 +296,7 @@
                 <h3>Sillas</h3>
                 <p class="product-price">$22.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Sillas" data-precio="22.99" data-imagen="/assets/silla.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -272,7 +311,7 @@
                     <h3 class="card-title">1984</h3>
                     <p class="card-text">$19.99</p>
                     <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                        <button class="btn button-carrito">Agregar al Carrito</button>
+                        <button class="btn button-carrito" data-nombre="1984" data-precio="19.99" data-imagen="/assets/1984.jpg">Agregar al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -284,7 +323,7 @@
                     <h3 class="card-title">Carmilla</h3>
                     <p class="card-text">$24.99</p>
                     <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                        <button class="btn button-carrito">Agregar al Carrito</button>
+                        <button class="btn button-carrito" data-nombre="Carmilla" data-precio="24.99" data-imagen="/assets/carmilla.jpg">Agregar al Carrito</button>
                     </div>
                 </div>
             </div>
@@ -295,7 +334,7 @@
                 <h3>Bullet Journal</h3>
                 <p class="product-price">$29.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Bullet Journal" data-precio="29.99" data-imagen="/assets/journal.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -308,7 +347,7 @@
                 <h3>Metamorfosis</h3>
                 <p class="product-price">$15.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Metamorfosis" data-precio="15.99" data-imagen="/assets/metamofosis.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -318,7 +357,7 @@
                 <h3>Seda</h3>
                 <p class="product-price">$34.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Seda" data-precio="34.99" data-imagen="/assets/seda.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -328,7 +367,7 @@
                 <h3>Trouvé</h3>
                 <p class="product-price">$22.99</p>
                 <div class="d-flex justify-content-center"> <!-- Agregamos el contenedor para centrar -->
-                    <button class="btn button-carrito">Agregar al Carrito</button>
+                    <button class="btn button-carrito" data-nombre="Trouvé" data-precio="22.99" data-imagen="/assets/trouve.jpg">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
@@ -368,5 +407,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
+    <script src="catalogo.js"></script>
 </body>
 </html>
